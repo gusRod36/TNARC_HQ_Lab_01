@@ -35,7 +35,6 @@ TNARC's HQ has grown from one building to two, plus a small server room. Today e
 | Access | A-Access-SW1, A-Access-SW2, B-Access-SW1, B-Access-SW2 | 2960 | User ports |
 | Server block | Server-SW1 | 3650 | Connects DHCP server and future servers |
 | End devices | 2 PCs per VLAN, DHCP-Server | | Testing and Services |
-| | | | |
 
 ## Network Addressing
 | VLAN | Name | Building | Subnet | Gateway (Virtual IP) |
@@ -51,7 +50,6 @@ TNARC's HQ has grown from one building to two, plus a small server room. Today e
 |  | Servers | Server Block | 10.0.200.0/24 | 10.0.200.1 |
 | 777 | Native | A and B | | |
 | 999 | Unused | A and B | | |
-| | | | | | 
 
 [Click for more..](./Network_Addresses.md)
 
@@ -80,7 +78,6 @@ TNARC's HQ has grown from one building to two, plus a small server room. Today e
 | Power off A-Dist-1 during a continuous ping | 2 | ping -t | Brief loss, then recovers | [Success](./verification/Failover/VLAN10_Ping_A_Distribution_1_powered_off.JPG) |
 | Power off Core-1 during a continuous ping | 2 | ping -t | Brief loss, then recovers | [Success](./verification/Failover/PC_VLAN10_Ping_Core_1_Powered_off.JPG) |
 | Root bridge matches HSRP active for each VLAN | 4 | show spanning-tree/show standby brief | same switch | [Success](./verification/root_stp_and_standby.md) |
-| | | | | |
 
 [Click for more...](./verification/Verification_all.md)
 
