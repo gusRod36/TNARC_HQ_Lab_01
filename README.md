@@ -92,6 +92,12 @@ TNARC's HQ has grown from one building to two, plus a small server room. Today e
 2. OSPF Hello messages on access interfaces in area 2 were causing the VLAN networks to enter a cycle of DOWN/FULL every few seconds. This cycle was making all of the Building B Vlans unreachable across the network. 
     - Even though both interfaces were set to passive the cycle persisted, so to fix it I made VLANs 110,120,130, and 199 passive interfaces.
 
+3. EtherChannel VLAN mask mismatch, neither switch would pair because the interfaces and port-channel allowed VLANs were not matching.
+    - To fix I went into the interfaces associated with the etherchannel, in this case g1/0/5-6, and added the same VLANs on the network and changed the native VLAN to the same one, then did the same in the port-channel of the ether channel in this case po10.
+      - BuildingA: the commands used were "switchport trunk allowed vlan 10,20,30,99,777"
+      - switchport trunk native vlan 777
+      - BuildingB: the commands used were "switchport trunk allowed vlan 110,120,130,199,777"
+
 ## What I'd do next?
 1. Harden the access layer with DAI, DHCP Snooping, Port Security and BPDU Guard/Filter.
 2. Add Web, DNS, NTP and Firewall services across the network.
